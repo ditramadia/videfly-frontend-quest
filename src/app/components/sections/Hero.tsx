@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import Label from '@/app/components/Label'
 import Button from '@/app/components/Button'
+import InputDropdown from '@/app/components/InputDropdown'
 
 const Hero = () => {
   return (
@@ -38,8 +39,8 @@ const Hero = () => {
           </div>
           
           <div className='flex flex-col min-[420px]:flex-row gap-2 mt-8 md:mt-16 md:mb-16 lg:mt-24 xl:mb-56'>
-            <div className='h-11 w-full bg-white border-2 border-primary-500 rounded-lg'>
-              {/* Text Input Field */}
+            <div className='h-11 w-full'>
+              <InputDropdown />
             </div>
             <div className='h-11 transition-150 hover:scale-105'>
               <Button text='Analisa' color="primary" />

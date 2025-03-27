@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Button = ({ text, color, border, bold }: ButtonProps) => {
   const wrapperBaseStyle =
-    'overflow-hidden w-full h-full rounded-lg cursor-pointer';
+    'overflow-hidden w-full h-full rounded-xl cursor-pointer';
   const baseStyle = `flex justify-center items-center w-full h-full px-4 py-2 ${bold ? 'font-semibold' : ''}`;
 
   const colorStyles = {
@@ -25,9 +25,9 @@ const Button = ({ text, color, border, bold }: ButtonProps) => {
   };
 
   const borderStyles = {
-    primary: 'rounded-[7px]',
-    gray: 'rounded-[7px]',
-    gradient: 'rounded-[6px]',
+    primary: 'rounded-[11px]',
+    gray: 'rounded-[11px]',
+    gradient: 'rounded-[10px]',
   };
 
   return (
