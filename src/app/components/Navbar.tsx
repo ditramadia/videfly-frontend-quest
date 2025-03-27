@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative flex justify-between items-center md:gap-8 container py-3 md:py-4">
+    <nav className="relative flex justify-between items-center md:gap-8 container-md py-3 md:py-4">
       <div>
         <Link href="/">
           <Image

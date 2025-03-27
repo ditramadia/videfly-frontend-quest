@@ -18,7 +18,7 @@
 }
 
 @layer utilities {
-  .container {
+  .container-md {
     @apply max-w-[1200px] w-11/12 mx-auto;
   }
 
