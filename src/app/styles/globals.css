@@ -15,4 +15,8 @@
   .container {
     @apply w-11/12 mx-auto;
   }
+
+  .transition-150 {
+    @apply transition-all duration-150 ease-in-out;
+  }
 }
