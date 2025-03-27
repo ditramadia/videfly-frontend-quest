@@ -13,14 +13,13 @@ const Navbar = () => {
         />
       </div>
 
-      <div>
+      <div className='flex gap-6 items-center'>
         <div>
-          {/* Button */}
         </div>
         <div className="flex flex-col gap-[6px] cursor-pointer">
-          <div className="w-6 h-[2px] bg-paragraph-500 rounded-full"></div>
-          <div className="w-6 h-[2px] bg-paragraph-500 rounded-full"></div>
-          <div className="w-6 h-[2px] bg-paragraph-500 rounded-full"></div>
+          <div className="w-6 h-[2px] bg-paragraph rounded-full"></div>
+          <div className="w-6 h-[2px] bg-paragraph rounded-full"></div>
+          <div className="w-6 h-[2px] bg-paragraph rounded-full"></div>
         </div>
       </div>
     </div>
