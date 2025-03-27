@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import navigationMenu from '../data/navigation-menu';
+import navigationMenu from '@/app/data/navigation-menu';
 
-import Button from './Button';
+import Button from '@/app/components/Button';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
