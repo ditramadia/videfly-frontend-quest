@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+@tailwind utilities;
+
+@theme {
+  --color-paragraph-500: #545454;
+}
+
+@layer utilities {
+  .container {
+    @apply w-11/12 mx-auto;
+  }
+}
