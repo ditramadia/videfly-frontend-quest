@@ -8,6 +8,16 @@ const Hero = () => {
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-74px)] md:py-16 lg:py-28 bg-white md:bg-gradient-to-br md:from-[#7261EF] md:via-[#B9AFF7] md:to-[#F1EDFD]'>
       <div className='overflow-hidden md:relative md:max-w-[1200px] w-full md:w-11/12 md:min-h-[450px] py-12 md:px-10 bg-white md:rounded-3xl'>
+        <div className='hidden md:block md:absolute md:top-[-324px] xl:top-[-484px] md:right-[-444px] xl:right-[-600px] md:w-[768px] xl:w-[1120px] md:h-[768px] xl:h-[1120px]'>
+          <Image 
+            src='/icons/hero-vignette.svg'
+            alt='Purple ellipse vignette'
+            fill
+            objectFit='contain'
+            priority
+          />
+        </div>
+        
         <div className='relative md:absolute md:inset-y-0 md:-right-12 w-full md:w-1/2 h-72 md:h-full'>
           <Image 
             src='/images/hero-mockup.png'
@@ -27,7 +37,7 @@ const Hero = () => {
             <p className='text-balance text-center md:text-left text-paragraph'>Masukkan URL, ubah jadi video dalam hitungan detik. <br /> Mudah dan gratis!</p>
           </div>
           
-          <div className='flex flex-col min-[420px]:flex-row gap-2 mt-8 md:mt-16 md:mb-16 lg:mt-24 lg:mb-56'>
+          <div className='flex flex-col min-[420px]:flex-row gap-2 mt-8 md:mt-16 md:mb-16 lg:mt-24 xl:mb-56'>
             <div className='h-11 w-full bg-white border-2 border-primary-500 rounded-lg'>
               {/* Text Input Field */}
             </div>
