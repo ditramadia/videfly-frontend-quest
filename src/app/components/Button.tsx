@@ -5,7 +5,7 @@ interface ButtonProps {
   color: 'primary' | 'gray' | 'gradient';
   border?: boolean;
   bold?: boolean;
-  onClick?: () => void
+  onClick?: () => void;
 }
 
 const Button = ({ text, color, border, bold, onClick }: ButtonProps) => {
