@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden absolute top-[100%] inset-x-0 mt-4 bg-white p-2 pb-6 rounded-lg shadow-lg shadow-surface-600">
+        <div className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg shadow-lg shadow-surface-600">
           <ul className="flex flex-col items-center gap-2">
             {navigationMenu.map((navItem, i) => (
               <li

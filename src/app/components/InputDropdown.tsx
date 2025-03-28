@@ -42,10 +42,10 @@ const InputDropdown = ({ options, placeholder, value, onChange }: InputDropdownP
   return (
     <div ref={dropdownRef} className='relative w-full h-full'>
       <button 
-        className='flex items-center gap-2 w-full h-full pl-2 pr-3 border-2 border-primary-500 rounded-xl cursor-pointer'
+        className='flex items-center gap-2 w-full h-full pr-2 pl-3 border-2 border-primary-500 rounded-xl cursor-pointer'
         onClick={handleToggleOptions}
       >
-        <div className='p-1 rounded-lg'>
+        <div className='hidden lg:block'>
           <Image 
             src="/icons/link.svg"
             alt='Link'
@@ -53,9 +53,14 @@ const InputDropdown = ({ options, placeholder, value, onChange }: InputDropdownP
             height={24}
           />
         </div>
-        <p className="overflow-hidden flex-1 line-clamp-1 text-start text-ellipsis">
-          {value ? value : placeholder}
-        </p>
+        <div className='flex-1'>
+          <input 
+            type="text"
+            className='w-full outline-0 cursor-pointer' 
+            value={value} 
+            placeholder={placeholder} 
+            readOnly/>
+        </div>
         <div>
           <Image 
             src="/icons/caret-down.svg"
@@ -68,12 +73,12 @@ const InputDropdown = ({ options, placeholder, value, onChange }: InputDropdownP
 
       {
         isOptionsOpen &&
-        <ul className='absolute overflow-auto top-full w-full max-h-52 mt-2 bg-white border-2 border-surface-600 rounded-xl'>
+        <ul className='absolute overflow-y-auto w-full max-h-32 xl:max-h-52 mt-2 bg-white border-2 border-surface-600 rounded-xl'>
           {
             options.map((option, i) => (
               <li 
                 key={i} 
-                className='overflow-hidden py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'
+                className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'
                 onClick={() => handleSelectOption(option)}
               >
                 {option}
