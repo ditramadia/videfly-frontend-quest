@@ -1,5 +1,4 @@
 const urlSelection = [
-  'https://example.com/products/brightening-sunscreen-brightening-sunscreen-brightening-sunscreen',
   'https://example.com/products/cool-sneakers',
   'https://example.com/products/brightening-sunscreen',
   'https://example.com/products/wireless-earbuds',
