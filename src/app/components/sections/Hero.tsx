@@ -42,7 +42,7 @@ const Hero = () => {
         <div className="w-11/12 md:w-1/2 mx-auto md:mx-0 mt-12 md:mt-0 @container">
           <div className="flex flex-col items-center md:items-start gap-4">
             <Label text="Live Demo" />
-            <h1 className="font-nunito font-bold text-3xl md:text-4xl lg:text-5xl text-center md:text-start leading-10 md:leading-12 lg:leading-16">
+            <h1 className="font-nunito font-bold text-3xl md:text-4xl lg:text-5xl text-center md:text-start leading-12 md:leading-14 lg:leading-16">
               Coba Fitur URL to Video <br />
               <span className="bg-gradient-to-r from-[#7F52FF] to-[#FB8570] text-transparent bg-clip-text">
                 Tanpa Biaya!
@@ -54,7 +54,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="flex flex-col @sm:flex-row gap-2 mt-8 md:mt-16 md:mb-32 lg:mt-24 xl:mb-56">
+          <div className="flex flex-col @sm:flex-row gap-2 mt-8 mb-12 @sm:mt-16 @sm:mb-32 @md:mt-24 @lg:mb-56">
             <div className="@sm:flex-1 h-11">
               <InputDropdown
                 options={urlSelection}

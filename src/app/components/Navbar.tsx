@@ -22,8 +22,8 @@ const Navbar = () => {
           <Image
             src="/icons/videfly-logo-white-bg-transparent-1.svg"
             alt="Videfly logo"
-            width={100}
-            height={100}
+            width={120}
+            height={120}
           />
         </Link>
       </div>
