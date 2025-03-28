@@ -5,9 +5,10 @@ interface ButtonProps {
   color: 'primary' | 'gray' | 'gradient';
   border?: boolean;
   bold?: boolean;
+  onClick?: () => void
 }
 
-const Button = ({ text, color, border, bold }: ButtonProps) => {
+const Button = ({ text, color, border, bold, onClick }: ButtonProps) => {
   const wrapperBaseStyle =
     'overflow-hidden w-full h-full rounded-xl cursor-pointer';
   const baseStyle = `flex justify-center items-center w-full h-full px-4 py-2 ${bold ? 'font-semibold' : ''}`;
@@ -33,6 +34,7 @@ const Button = ({ text, color, border, bold }: ButtonProps) => {
   return (
     <button
       className={`${wrapperBaseStyle} ${border ? wrapperBorderStyles[color] : ''}`}
+      onClick={onClick}
     >
       <div
         className={`${baseStyle} ${colorStyles[color]} ${border ? borderStyles[color] : ''}`}

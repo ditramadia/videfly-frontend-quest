@@ -1,11 +1,51 @@
-import Image from 'next/image'
-import React from 'react'
+"use client"
 
-const InputDropdown = () => {
+import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
+
+interface InputDropdownProps {
+  options: string[]
+  placeholder?: string
+  value: string
+  onChange: (value: string) => void
+}
+
+const InputDropdown = ({ options, placeholder, value, onChange }: InputDropdownProps) => {
+  const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  const handleToggleOptions = () => {
+    setIsOptionsOpen((prev) => !prev)
+  }
+
+  const handleSelectOption = (option: string) => {
+    onChange(option)
+    setIsOptionsOpen(false)
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOptionsOpen(false)
+      }
+    }
+
+    if (isOptionsOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isOptionsOpen])
+
   return (
-    <div className='relative w-full h-full'>
-      <button className='flex items-center gap-2 w-full h-full pl-2 pr-3 border-2 border-primary-500 rounded-xl'>
-        <div className='p-1 rounded-lg transition-150 hover:bg-surface-600 cursor-pointer'>
+    <div ref={dropdownRef} className='relative w-full h-full'>
+      <button 
+        className='flex items-center gap-2 w-full h-full pl-2 pr-3 border-2 border-primary-500 rounded-xl cursor-pointer'
+        onClick={handleToggleOptions}
+      >
+        <div className='p-1 rounded-lg'>
           <Image 
             src="/icons/link.svg"
             alt='Link'
@@ -13,28 +53,35 @@ const InputDropdown = () => {
             height={24}
           />
         </div>
-        <div className='flex gap-2 w-full cursor-pointer'>
-          <span className='flex-1 text-start truncate'>Pilih Link URL Product</span>
-          <div>
-            <Image 
-              src="/icons/caret-down.svg"
-              alt='Caret down'
-              width={24}
-              height={24}
-            />
-          </div>
+        <p className="overflow-hidden flex-1 line-clamp-1 text-start text-ellipsis">
+          {value ? value : placeholder}
+        </p>
+        <div>
+          <Image 
+            src="/icons/caret-down.svg"
+            alt='Caret down'
+            width={24}
+            height={24}
+          />
         </div>
       </button>
 
-      <ul className='absolute overflow-auto top-full w-full max-h-52 mt-2 border-2 border-surface-600 rounded-xl'>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 1</li>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 2</li>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 3</li>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 4</li>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 5</li>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 6</li>
-        <li className='py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'>Item 7</li>
-      </ul>
+      {
+        isOptionsOpen &&
+        <ul className='absolute overflow-auto top-full w-full max-h-52 mt-2 bg-white border-2 border-surface-600 rounded-xl'>
+          {
+            options.map((option, i) => (
+              <li 
+                key={i} 
+                className='overflow-hidden py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500'
+                onClick={() => handleSelectOption(option)}
+              >
+                {option}
+              </li>
+            ))
+          }
+        </ul>
+      }
     </div>
   )
 }
