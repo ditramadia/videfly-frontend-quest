@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import navigationMenu from '../data/navigation-menu';
+import navigationMenu from '@/app/data/navigation-menu';
 
-import Button from './Button';
+import Button from '@/app/components/Button';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative flex justify-between items-center md:gap-8 container py-3 md:py-4">
+    <nav className="relative flex justify-between items-center md:gap-8 container-md py-3 md:py-4">
       <div>
         <Link href="/">
           <Image
@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden absolute top-[100%] inset-x-0 mt-4 bg-white p-2 pb-6 rounded-lg shadow-lg shadow-surface-600">
+        <div className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg shadow-lg shadow-surface-600">
           <ul className="flex flex-col items-center gap-2">
             {navigationMenu.map((navItem, i) => (
               <li

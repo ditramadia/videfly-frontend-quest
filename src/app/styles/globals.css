@@ -9,6 +9,7 @@
   --color-surface-600: #ededed;
   --color-surface-700: #d6d6d6;
   --color-paragraph: #545454;
+  --color-label-disable: #b0b0b0;
   --color-primary-500: #703be7;
   --color-primary-600: #4e21b5;
   --color-primary-700: #38148c;
@@ -18,7 +19,7 @@
 }
 
 @layer utilities {
-  .container {
+  .container-md {
     @apply max-w-[1200px] w-11/12 mx-auto;
   }
 
