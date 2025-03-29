@@ -71,7 +71,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="flex flex-col @sm:flex-row gap-2 mt-8 mb-12 @sm:mt-16 @sm:mb-32 @md:mt-24 @lg:mb-56">
+          <div className="flex flex-col @sm:flex-row gap-2 max-w-[500px] md:max-w-[800px] mx-auto md:mx-0 mt-8 mb-12 @sm:mt-12 @sm:mb-32 @md:mt-16 @lg:mt-24 @lg:mb-56">
             <div className="@sm:flex-1 h-11">
               <InputDropdown
                 options={urlSelection}
