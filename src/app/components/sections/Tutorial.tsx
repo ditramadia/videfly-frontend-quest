@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import tutorialSteps from '@/app/data/tutorial';
 
@@ -9,6 +10,8 @@ import Label from '@/app/components/Label';
 import TutorialStep from '@/app/components/TutorialStep';
 
 const Tutorial = () => {
+  const MotionImage = motion.create(Image);
+
   const [activeStep, setActiveStep] = useState<number>(0);
 
   const handleChangeStep = (step: number) => {
@@ -30,18 +33,21 @@ const Tutorial = () => {
       <div className="mt-16 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
         {/* Tutorial Images */}
         <div className="lg:basis-1/2 flex items-center justify-center w-full aspect-4/3 p-2 md:p-12 bg-surface-500 border-1 border-border rounded-3xl">
-          <div className="w-full h-full p-1 md:p-8 bg-white border-1 border-border rounded-2xl md:rounded-lg">
+          <div className="w-full h-full p-4 md:p-8 bg-white border-1 border-border rounded-2xl md:rounded-lg">
             <div className="relative w-full h-full">
-              {tutorialSteps.map((step, i) => (
-                <Image
-                  key={i}
-                  src={step.imageUrl}
-                  alt={step.imageAlt}
-                  className={`${i === activeStep ? '' : 'hidden'} object-contain`}
+              <AnimatePresence>
+                <MotionImage
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  src={tutorialSteps[activeStep].imageUrl}
+                  alt={tutorialSteps[activeStep].imageAlt}
+                  className="object-contain"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-              ))}
+              </AnimatePresence>
             </div>
           </div>
         </div>

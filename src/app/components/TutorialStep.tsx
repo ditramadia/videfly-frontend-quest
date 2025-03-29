@@ -15,16 +15,15 @@ const TutorialStep = ({
   active,
   onClick,
 }: TutorialStepProps) => {
-  const borderStyle = active
-    ? 'bg-gradient-to-b from-[#EEE2FF] to-[#9747FF]'
-    : 'bg-gradient-to-b bg-border';
+  const activeBorderStyle =
+    'after:absolute after:inset-0 after:-z-10 after:bg-gradient-to-b after:from-[#EEE2FF] after:to-[#9747FF] after:content-[""]';
   const textStyle = active
     ? 'bg-gradient-to-br text-primary-gradient'
     : 'text-black';
 
   return (
     <div
-      className={`p-[1px] ${borderStyle} rounded-3xl ${active ? 'drop-shadow-[0_4px_30px_#6636D214]' : 'hover:drop-shadow-[0_4px_30px_#6636D214]'} cursor-pointer transition-300`}
+      className={`relative overflow-hidden p-[1px] bg-border ${activeBorderStyle} rounded-3xl ${active ? 'drop-shadow-[0_4px_30px_#6636D214] after:opacity-100' : 'hover:drop-shadow-[0_4px_30px_#6636D214] after:opacity-0'} cursor-pointer transition-300 after:transition-all after:duration-300 after:ease-in-out`}
       onClick={onClick}
     >
       <div className="flex flex-col gap-2 bg-white rounded-[23px] py-3 px-4">

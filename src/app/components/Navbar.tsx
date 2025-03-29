@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import navigationMenu from '@/app/data/navigation-menu';
 
@@ -79,33 +80,41 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg drop-shadow-[0_4px_8px_var(--color-shadow)]">
-          <ul className="flex flex-col items-center gap-2">
-            {navigationMenu.map((navItem, i) => (
-              <li
-                key={i}
-                className="w-full rounded-sm text-center cursor-pointer transition-150 hover:bg-surface-500"
-                onClick={() => handleMenuClick(navItem.url)}
-              >
-                <Link
-                  href={navItem.url}
-                  className="block w-full h-full py-2 px-2 text-paragraph"
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.15, ease: 'easeInOut' }}
+            className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg drop-shadow-[0_4px_8px_var(--color-shadow)]"
+          >
+            <ul className="flex flex-col items-center gap-2">
+              {navigationMenu.map((navItem, i) => (
+                <li
+                  key={i}
+                  className="w-full rounded-sm text-center cursor-pointer transition-150 hover:bg-surface-500"
+                  onClick={() => handleMenuClick(navItem.url)}
                 >
-                  {navItem.label}
-                </Link>
+                  <Link
+                    href={navItem.url}
+                    className="block w-full h-full py-2 px-2 text-paragraph"
+                  >
+                    {navItem.label}
+                  </Link>
+                </li>
+              ))}
+              <li className="mt-2">
+                <div className="max-w-[300px] w-full transition-150 hover:scale-105">
+                  <Link href="/auth/register">
+                    <Button text="Buat Video" color="gradient" />
+                  </Link>
+                </div>
               </li>
-            ))}
-            <li className="mt-2">
-              <div className="max-w-[300px] w-full transition-150 hover:scale-105">
-                <Link href="/auth/register">
-                  <Button text="Buat Video" color="gradient" />
-                </Link>
-              </div>
-            </li>
-          </ul>
-        </div>
-      )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
