@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 
 import navigationMenu from '@/app/data/navigation-menu';
 
@@ -82,12 +82,13 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.15, ease: "easeInOut" }}
-            className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg drop-shadow-[0_4px_8px_var(--color-shadow)]">
+            transition={{ duration: 0.15, ease: 'easeInOut' }}
+            className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg drop-shadow-[0_4px_8px_var(--color-shadow)]"
+          >
             <ul className="flex flex-col items-center gap-2">
               {navigationMenu.map((navItem, i) => (
                 <li

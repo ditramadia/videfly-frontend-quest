@@ -34,10 +34,10 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <motion.div 
-          initial={{ x: "120%" }}
+        <motion.div
+          initial={{ x: '120%' }}
           animate={{ x: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          transition={{ duration: 0.7, ease: 'easeInOut' }}
           className="relative md:absolute md:inset-y-0 md:-right-12 w-full md:w-1/2 h-72 md:h-full"
         >
           <Image
@@ -52,9 +52,9 @@ const Hero = () => {
 
         {/* Main Content */}
         <motion.div
-          initial={{ x: "-120%" }}
+          initial={{ x: '-120%' }}
           animate={{ x: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          transition={{ duration: 0.7, ease: 'easeInOut' }}
           className="w-11/12 md:w-1/2 mx-auto md:mx-0 mt-12 md:mt-0 @container"
         >
           <div className="flex flex-col items-center md:items-start gap-4">

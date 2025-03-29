@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion';
 
 import features from '@/app/data/features';
 
@@ -15,8 +15,8 @@ import Label from '@/app/components/Label';
 import FeatureCard from '@/app/components/FeatureCard';
 
 const Features = () => {
-  const cardContainerRef = useRef(null)
-  const isInView = useInView(cardContainerRef, { once: true })
+  const cardContainerRef = useRef(null);
+  const isInView = useInView(cardContainerRef, { once: true });
 
   return (
     <div id="features" className="container-md pt-8">
@@ -33,41 +33,41 @@ const Features = () => {
       <div ref={cardContainerRef} className="overflow-hidden mt-16">
         <div className="flex flex-wrap">
           <motion.div
-            initial={{ x: "-350%"}}
+            initial={{ x: '-350%' }}
             animate={isInView ? { x: 0 } : {}}
-            transition={{ duration: 1.5, ease:  "easeInOut" }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
             className="basis-full md:basis-1/2 lg:basis-1/3 py-2 md:p-2"
           >
             <FeatureCard feature={features[0]} icon={LinkIcon} />
           </motion.div>
-          <motion.div 
-            initial={{ x: "-350%"}}
+          <motion.div
+            initial={{ x: '-350%' }}
             animate={isInView ? { x: 0 } : {}}
-            transition={{ duration: 1.5, ease:  "easeInOut" }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
             className="basis-full md:basis-1/2 lg:basis-1/3 py-2 md:p-2"
           >
             <FeatureCard feature={features[1]} icon={TemplateIcon} />
           </motion.div>
-          <motion.div 
-            initial={{ x: "-350%"}}
+          <motion.div
+            initial={{ x: '-350%' }}
             animate={isInView ? { x: 0 } : {}}
-            transition={{ duration: 1.5, ease:  "easeInOut" }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
             className="basis-full md:basis-1/2 lg:basis-1/3 py-2 md:p-2"
           >
             <FeatureCard feature={features[2]} icon={EditIcon} />
           </motion.div>
-          <motion.div 
-            initial={{ x: "250%"}}
+          <motion.div
+            initial={{ x: '250%' }}
             animate={isInView ? { x: 0 } : {}}
-            transition={{ duration: 1.5, ease:  "easeInOut" }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
             className="basis-full md:basis-1/2 py-2 md:p-2"
           >
             <FeatureCard feature={features[3]} icon={ChartIcon} />
           </motion.div>
-          <motion.div 
-            initial={{ x: "250%"}}
+          <motion.div
+            initial={{ x: '250%' }}
             animate={isInView ? { x: 0 } : {}}
-            transition={{ duration: 1.5, ease:  "easeInOut" }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
             className="basis-full lg:basis-1/2 lg:w-1/2 py-2 md:p-2"
           >
             <FeatureCard feature={features[4]} icon={CalendarIcon} />

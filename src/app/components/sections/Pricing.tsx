@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
@@ -10,20 +10,20 @@ import Button from '@/app/components/Button';
 import AnimatedNumber from '@/app/components/AnimatedNumber';
 
 const Pricing = () => {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true });
   const [stats, setStats] = useState({
     productivity: 0,
     roi: 0,
-    cost: 0
-  })
+    cost: 0,
+  });
 
   if (isInView && stats.productivity === 0) {
     setStats({
       productivity: 70,
       roi: 50,
-      cost: 20
-    })
+      cost: 20,
+    });
   }
 
   return (
@@ -49,7 +49,10 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div ref={containerRef} className="mt-16 flex flex-col md:flex-row items-stretch md:justify-between gap-12 md:gap-8 w-full mx-auto">
+        <div
+          ref={containerRef}
+          className="mt-16 flex flex-col md:flex-row items-stretch md:justify-between gap-12 md:gap-8 w-full mx-auto"
+        >
           <div className="flex flex-col gap-4 lg:gap-16 items-center basis-1/3 md:py-4 text-center">
             <h3 className="font-nunito text-7xl lg:text-8xl text-center font-bold">
               <span className="bg-gradient-to-br text-primary-gradient">

@@ -15,7 +15,8 @@ const TutorialStep = ({
   active,
   onClick,
 }: TutorialStepProps) => {
-  const activeBorderStyle = 'after:absolute after:inset-0 after:-z-10 after:bg-gradient-to-b after:from-[#EEE2FF] after:to-[#9747FF] after:content-[""]'
+  const activeBorderStyle =
+    'after:absolute after:inset-0 after:-z-10 after:bg-gradient-to-b after:from-[#EEE2FF] after:to-[#9747FF] after:content-[""]';
   const textStyle = active
     ? 'bg-gradient-to-br text-primary-gradient'
     : 'text-black';
