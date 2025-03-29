@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import supportedBy from '@/app/data/support';
+import supportedBy from '@/data/support';
 
 const Support = () => {
   return (

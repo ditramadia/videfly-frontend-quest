@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-import features from '@/app/data/features';
+import features from '@/data/features';
 
 import LinkIcon from '@public/icons/link.svg';
 import TemplateIcon from '@public/icons/template.svg';
@@ -11,8 +11,8 @@ import EditIcon from '@public/icons/edit.svg';
 import ChartIcon from '@public/icons/chart.svg';
 import CalendarIcon from '@public/icons/calendar.svg';
 
-import Label from '@/app/components/Label';
-import FeatureCard from '@/app/components/FeatureCard';
+import Label from '@/components/Label';
+import FeatureCard from '@/components/FeatureCard';
 
 const Features = () => {
   const cardContainerRef = useRef(null);

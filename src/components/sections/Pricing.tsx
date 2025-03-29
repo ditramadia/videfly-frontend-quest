@@ -6,8 +6,8 @@ import { useInView } from 'framer-motion';
 
 import ArrowRightFilledIcon from '@public/icons/arrow-right-filled.svg';
 
-import Button from '@/app/components/Button';
-import AnimatedNumber from '@/app/components/AnimatedNumber';
+import Button from '@/components/Button';
+import AnimatedNumber from '@/components/AnimatedNumber';
 
 const Pricing = () => {
   const containerRef = useRef(null);

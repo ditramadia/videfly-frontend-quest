@@ -1,7 +1,7 @@
 import React, { FC, SVGProps } from 'react';
 import Image from 'next/image';
 
-import FeatureType from '@/app/types/feature-type';
+import FeatureType from '@/types/feature-type';
 
 interface FeatureCardProps {
   feature: FeatureType;

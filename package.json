@@ -1,6 +1,6 @@
 {
   "name": "videfly-frontend-quest",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -27,7 +27,6 @@
     "eslint-config-prettier": "^10.1.1",
     "prettier": "^3.5.3",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "url-loader": "^4.1.1"
+    "typescript": "^5"
   }
 }

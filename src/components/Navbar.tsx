@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import navigationMenu from '@/app/data/navigation-menu';
+import navigationMenu from '@/data/navigation-menu';
 
-import Button from '@/app/components/Button';
+import Button from '@/components/Button';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import urlSelection from '@/app/data/url-selection';
+import urlSelection from '@/data/url-selection';
 
-import Label from '@/app/components/Label';
-import Button from '@/app/components/Button';
-import InputDropdown from '@/app/components/InputDropdown';
+import Label from '@/components/Label';
+import Button from '@/components/Button';
+import InputDropdown from '@/components/InputDropdown';
 
 const Hero = () => {
   const [selectedValue, setSelectedValue] = useState<string>('');

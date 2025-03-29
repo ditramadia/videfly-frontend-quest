@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import tutorialSteps from '@/app/data/tutorial';
+import tutorialSteps from '@/data/tutorial';
 
-import Label from '@/app/components/Label';
-import TutorialStep from '@/app/components/TutorialStep';
+import Label from '@/components/Label';
+import TutorialStep from '@/components/TutorialStep';
 
 const Tutorial = () => {
   const MotionImage = motion.create(Image);
