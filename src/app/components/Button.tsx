@@ -16,12 +16,12 @@ const Button = ({ text, color, border, bold, onClick }: ButtonProps) => {
   const colorStyles = {
     primary: 'bg-primary-500 text-white',
     gray: 'bg-surface-500 text-paragraph',
-    gradient: 'bg-gradient-to-br from-[#7F52FF] to-[#FB8570] text-white',
+    gradient: 'bg-gradient-to-br from-main-grad-start to-main-grad-end text-white',
   };
 
   const wrapperBorderStyles = {
     primary: 'bg-gradient-to-b from-primary-600 to-primary-700 p-[1px]',
-    gray: 'bg-gradient-to-b from-border-gray-500 to-border-gray-600 bg-red-500 p-[1px]',
+    gray: 'bg-gradient-to-b from-border-gray-500 to-border-gray-600 p-[1px]',
     gradient: 'bg-gradient-to-br from-[#aa8af3] to-[#e58084] p-[2px]',
   };
 
