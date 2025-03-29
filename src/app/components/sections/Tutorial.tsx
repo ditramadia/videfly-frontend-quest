@@ -29,17 +29,16 @@ const Tutorial = () => {
 
       <div className="mt-16 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
         {/* Tutorial Images */}
-        <div className="lg:basis-1/2 flex items-center justify-center w-full h-64 md:h-[420px] p-2 md:p-12 bg-surface-500 border-1 border-border rounded-3xl">
+        <div className="lg:basis-1/2 flex items-center justify-center w-full aspect-4/3 p-2 md:p-12 bg-surface-500 border-1 border-border rounded-3xl">
           <div className="w-full h-full p-1 md:p-8 bg-white border-1 border-border rounded-2xl md:rounded-lg">
             <div className="relative w-full h-full">
               {tutorialSteps.map((step, i) => (
                 <Image
-                  className={`${i === activeStep ? '' : 'hidden'}`}
+                  className={`${i === activeStep ? '' : 'hidden'} object-contain`}
                   key={i}
                   src={step.imageUrl}
                   alt={step.imageAlt}
                   fill
-                  objectFit="contain"
                 />
               ))}
             </div>
