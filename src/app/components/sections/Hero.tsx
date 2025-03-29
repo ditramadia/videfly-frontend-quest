@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="relative md:absolute md:inset-y-0 md:-right-12 w-full md:w-1/2 h-72 md:h-full">
           <Image
             src="/images/hero-mockup.png"
-            alt="Limerush Sparkling Energy Drink marketing mockup"
+            alt="Mockup marketing produk Limerush Sparkling Energy Drink"
             fill
             className='object-contain'
             priority
@@ -44,7 +44,7 @@ const Hero = () => {
             <Label text="Live Demo" />
             <h1 className="font-nunito font-bold text-3xl md:text-4xl lg:text-5xl text-center md:text-start leading-12 md:leading-14 lg:leading-16">
               Coba Fitur URL to Video <br />
-              <span className="bg-gradient-to-r from-text-grad-start to-text-grad-end text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r text-primary-gradient">
                 Tanpa Biaya!
               </span>
             </h1>

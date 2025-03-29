@@ -9,6 +9,7 @@
   --color-primary-600: #4e21b5;
   --color-primary-700: #38148c;
   --color-surface-500: #f5f5f5;
+  --color-card: #f5f5f9;
   --color-main-grad-start: #4f52ff;
   --color-main-grad-end: #fb8570;
   --color-text-grad-start: #7f52ff;
@@ -27,6 +28,10 @@
 @layer utilities {
   .container-md {
     @apply max-w-[1200px] w-11/12 mx-auto;
+  }
+
+  .text-primary-gradient {
+    @apply from-text-grad-start to-text-grad-end text-transparent bg-clip-text;
   }
 
   .transition-150 {

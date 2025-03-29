@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 
 import LinkIcon from '@public/icons/link.svg'
 import CaretDownIcon from '@public/icons/caret-down.svg'
