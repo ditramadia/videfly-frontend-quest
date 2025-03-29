@@ -16,8 +16,9 @@ const FeatureCard = ({ feature, icon: Icon }: FeatureCardProps) => {
         <Image
           src={feature.image}
           alt={feature.imageAlt}
-          fill
           className="object-contain"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 

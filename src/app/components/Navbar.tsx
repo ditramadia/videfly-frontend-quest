@@ -31,6 +31,7 @@ const Navbar = () => {
           alt="Videfly logo"
           width={120}
           height={120}
+          style={{ width: 'auto', height: 'auto' }}
           priority
         />
       </Link>
