@@ -6,7 +6,7 @@ import Support from '@/app/components/sections/Support';
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-24 md:gap-36 lg:gap-48">
+    <main className="flex flex-col gap-24 md:gap-20 lg:gap-32">
       <Hero />
       <Features />
       <Tutorial />

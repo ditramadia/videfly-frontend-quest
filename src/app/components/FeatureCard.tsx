@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { FC, SVGProps } from 'react';
 import Image from 'next/image';
 
+import FeatureType from '@/app/types/feature-type';
+
 interface FeatureCardProps {
-  title: string;
-  body: string;
-  imageSrc: string;
+  feature: FeatureType;
+  icon: FC<SVGProps<SVGSVGElement>>;
 }
 
-const FeatureCard = ({ title, body, imageSrc }: FeatureCardProps) => {
+const FeatureCard = ({ feature, icon: Icon }: FeatureCardProps) => {
   return (
-    <div className="w-full h-full bg-surface-500 rounded-xl">
+    <div className="w-full h-full bg-card rounded-xl">
       <div className="relative w-full h-64">
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent from-75% to-[#f5f5f9] to-90%"></div>
-        <Image src={imageSrc} alt="Feature 1" fill objectFit="contain" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent from-75% to-card to-95%"></div>
+        <Image
+          src={feature.image}
+          alt={feature.imageAlt}
+          fill
+          className="object-contain"
+        />
       </div>
 
-      <div className="mt-3 p-6">
-        <div className="mb-3">
-          <h3 className="font-nunito font-bold text-lg">{title}</h3>
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-3">
+          <Icon className="w-6" />
+          <h3 className="font-nunito font-bold text-lg">{feature.title}</h3>
         </div>
-        <p className="text-paragraph">{body}</p>
+        <p className="text-paragraph">{feature.body}</p>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import navigationMenu from '@/app/data/navigation-menu';
 
@@ -10,27 +11,37 @@ import Button from '@/app/components/Button';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const router = useRouter();
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const handleMenuClick = (url: string) => {
+    router.push(url);
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="relative flex justify-between items-center md:gap-8 container-md py-3 md:py-4">
-      <div>
-        <Link href="/">
-          <Image
-            src="/icons/videfly-logo-white-bg-transparent-1.svg"
-            alt="Videfly logo"
-            width={120}
-            height={120}
-          />
-        </Link>
-      </div>
+      {/* Logo */}
+      <Link href="/">
+        <Image
+          src="/icons/videfly-logo-white-bg-transparent-1.svg"
+          alt="Videfly logo"
+          width={120}
+          height={120}
+          priority
+        />
+      </Link>
 
-      <ul className="hidden flex-1 md:flex justify-around max-w-[642px]">
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex justify-around flex-1 max-w-[642px]">
         {navigationMenu.map((navItem, i) => (
-          <li key={i} className="text-paragraph transition-150 hover:scale-105">
+          <li
+            key={i}
+            className="text-sm lg:text-base text-paragraph transition-150 hover:scale-105"
+          >
             <Link href={navItem.url}>{navItem.label}</Link>
           </li>
         ))}
@@ -49,6 +60,7 @@ const Navbar = () => {
           </Link>
         </div>
 
+        {/* Hamburger Menu */}
         <div
           className="md:hidden flex flex-col gap-[6px] cursor-pointer"
           onClick={handleToggleMenu}
@@ -64,15 +76,23 @@ const Navbar = () => {
           ></div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg shadow-lg shadow-surface-600">
+        <div className="md:hidden absolute top-[100%] inset-x-0 z-40 mt-4 bg-white p-2 pb-6 rounded-lg drop-shadow-[0_4px_8px_var(--color-shadow)]">
           <ul className="flex flex-col items-center gap-2">
             {navigationMenu.map((navItem, i) => (
               <li
                 key={i}
-                className="w-full py-2 px-2 rounded-sm text-center cursor-pointer transition-150 hover:bg-surface-500"
+                className="w-full rounded-sm text-center cursor-pointer transition-150 hover:bg-surface-500"
+                onClick={() => handleMenuClick(navItem.url)}
               >
-                <Link href={navItem.url}>{navItem.label}</Link>
+                <Link
+                  href={navItem.url}
+                  className="block w-full h-full py-2 px-2 text-paragraph"
+                >
+                  {navItem.label}
+                </Link>
               </li>
             ))}
             <li className="mt-2">

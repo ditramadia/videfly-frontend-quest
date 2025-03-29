@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import React from 'react';
+
+import DiamondIcon from '@public/icons/diamond-filled.svg';
 
 interface LabelProps {
   text: string;
@@ -7,14 +8,9 @@ interface LabelProps {
 
 const Label = ({ text }: LabelProps) => {
   return (
-    <div className="w-fit p-[1px] bg-gradient-to-r from-[#4C3199] to-[#7F52FF] rounded-full">
-      <div className="flex items-center gap-2 py-1 px-2 bg-white rounded-full">
-        <Image
-          src="/icons/diamond-filled.svg"
-          alt="Diamond icon"
-          width={15}
-          height={15}
-        />
+    <div className="w-fit p-[1px] bg-gradient-to-r from-[#4C3199] to-text-grad-start rounded-full">
+      <div className="flex items-center gap-2 py-1 px-3 bg-white rounded-full">
+        <DiamondIcon className="text-primary-500 w-4" />
         <p className="text-sm text-primary-500">{text}</p>
       </div>
     </div>
