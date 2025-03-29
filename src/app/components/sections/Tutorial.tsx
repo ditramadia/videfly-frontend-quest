@@ -10,7 +10,7 @@ import Label from '@/app/components/Label';
 import TutorialStep from '@/app/components/TutorialStep';
 
 const Tutorial = () => {
-  const MotionImage = motion(Image);
+  const MotionImage = motion.create(Image);
 
   const [activeStep, setActiveStep] = useState<number>(0);
 
