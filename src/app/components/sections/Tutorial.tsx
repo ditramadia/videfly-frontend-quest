@@ -1,30 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import Label from '@/app/components/Label';
 import Image from 'next/image';
-import TutorialStep from '../TutorialStep';
 
-const stepData = [
-  {
-    title: 'Masukkan URL',
-    body: 'Cukup tempelkan tautan produk atau bisnis Anda, dan sistem kami akan secara otomatis mengambil informasi penting untuk memulai.',
-    imageUrl: '/images/tutorial-step-1.png',
-    imageAlt: 'Something',
-  },
-  {
-    title: 'Masukkan URL',
-    body: 'Cukup tempelkan tautan produk atau bisnis Anda, dan sistem kami akan secara otomatis mengambil informasi penting untuk memulai.',
-    imageUrl: '/images/tutorial-step-1.png',
-    imageAlt: 'Something',
-  },
-  {
-    title: 'Masukkan URL',
-    body: 'Cukup tempelkan tautan produk atau bisnis Anda, dan sistem kami akan secara otomatis mengambil informasi penting untuk memulai.',
-    imageUrl: '/images/tutorial-step-1.png',
-    imageAlt: 'Something',
-  },
-];
+import stepData from '@/app/data/tutorial-steps';
+
+import Label from '@/app/components/Label';
+import TutorialStep from '@/app/components/TutorialStep';
+
 
 const Tutorial = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
