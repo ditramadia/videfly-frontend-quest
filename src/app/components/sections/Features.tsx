@@ -5,7 +5,7 @@ import FeatureCard from '@/app/components/FeatureCard';
 
 const Features = () => {
   return (
-    <div className="container-md">
+    <div id="features" className="container-md pt-8">
       <div className="flex flex-col items-center gap-8">
         <Label text="Features" />
         <h2 className="font-nunito font-bold text-2xl md:text-3xl lg:text-4xl text-center leading-10 md:leading-12 lg:leading-14">

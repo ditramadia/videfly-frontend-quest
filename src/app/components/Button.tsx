@@ -21,7 +21,7 @@ const Button = ({ text, color, border, bold, onClick }: ButtonProps) => {
 
   const wrapperBorderStyles = {
     primary: 'bg-gradient-to-b from-primary-600 to-primary-700 p-[1px]',
-    gray: 'bg-gradient-to-b from-surface-600 to-surface-700 bg-red-500 p-[1px]',
+    gray: 'bg-gradient-to-b from-border-gray-500 to-border-gray-600 bg-red-500 p-[1px]',
     gradient: 'bg-gradient-to-br from-[#aa8af3] to-[#e58084] p-[2px]',
   };
 

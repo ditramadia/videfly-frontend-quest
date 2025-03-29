@@ -5,16 +5,18 @@
 @tailwind utilities;
 
 @theme {
-  --color-surface-500: #f5f5f5;
-  --color-surface-600: #ededed;
-  --color-surface-700: #d6d6d6;
-  --color-paragraph: #545454;
-  --color-label-disable: #b0b0b0;
   --color-primary-500: #703be7;
   --color-primary-600: #4e21b5;
   --color-primary-700: #38148c;
-
+  --color-surface-500: #f5f5f5;
+  --color-border: #e6e6e6;
+  --color-border-gray-500: #ededed;
+  --color-border-gray-600: #d6d6d6;
+  --color-paragraph: #545454;
+  --color-label-disable: #b0b0b0;
+  --color-shadow: #2b384c14;
   --font-poppins: 'Poppins', sans-serif;
+
   --font-nunito: 'Nunito', sans-serif;
 }
 

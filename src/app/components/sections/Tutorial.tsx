@@ -34,7 +34,7 @@ const Tutorial = () => {
   };
 
   return (
-    <div className="container-md">
+    <div id="tutorial" className="container-md pt-8">
       <div className="flex flex-col items-center gap-8">
         <Label text="Tutorial" />
         <h2 className="font-nunito font-bold text-2xl md:text-3xl lg:text-4xl text-center leading-10 md:leading-12 lg:leading-14">

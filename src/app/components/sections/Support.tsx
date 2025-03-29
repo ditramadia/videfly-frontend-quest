@@ -34,7 +34,10 @@ const data = [
 
 const Support = () => {
   return (
-    <div className="container-md flex flex-col md:flex-row md:items-center gap-4 md:gap-8 lg:gap-24">
+    <div
+      id="support"
+      className="container-md flex flex-col md:flex-row md:items-center pt-8 gap-4 md:gap-8 lg:gap-24"
+    >
       <div>
         <p className="text-nowrap">Paltform yang didukung:</p>
       </div>

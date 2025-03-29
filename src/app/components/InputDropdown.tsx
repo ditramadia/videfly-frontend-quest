@@ -76,7 +76,7 @@ const InputDropdown = ({
       </button>
 
       {isOptionsOpen && (
-        <ul className="absolute overflow-y-auto w-full max-h-32 xl:max-h-52 mt-2 bg-white border-2 border-surface-600 rounded-xl">
+        <ul className="absolute overflow-y-auto w-full max-h-32 xl:max-h-52 mt-2 bg-white border-1 border-border rounded-xl">
           {options.map((option, i) => (
             <li
               key={i}
