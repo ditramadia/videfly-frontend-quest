@@ -25,7 +25,7 @@ const Hero = () => {
           <Image
             src="/icons/hero-vignette.svg"
             alt="Purple ellipse vignette"
-            className="object-contain" 
+            className="object-contain"
             fill
             sizes="(max-width: 768px) 0vw, 50vw"
             priority

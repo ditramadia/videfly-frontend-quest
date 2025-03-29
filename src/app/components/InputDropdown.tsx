@@ -62,7 +62,7 @@ const InputDropdown = ({
         <div className="flex-1">
           <input
             type="text"
-            name='url-demo'
+            name="url-demo"
             className="w-full outline-0 text-sm cursor-pointer"
             value={value}
             placeholder={placeholder}
