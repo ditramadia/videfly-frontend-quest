@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import urlSelection from '@/app/data/url-selection';
 
@@ -33,7 +34,12 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="relative md:absolute md:inset-y-0 md:-right-12 w-full md:w-1/2 h-72 md:h-full">
+        <motion.div 
+          initial={{ x: "120%" }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+          className="relative md:absolute md:inset-y-0 md:-right-12 w-full md:w-1/2 h-72 md:h-full"
+        >
           <Image
             src="/images/hero-mockup.webp"
             alt="Mockup marketing produk Limerush Sparkling Energy Drink"
@@ -42,10 +48,15 @@ const Hero = () => {
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
-        </div>
+        </motion.div>
 
         {/* Main Content */}
-        <div className="w-11/12 md:w-1/2 mx-auto md:mx-0 mt-12 md:mt-0 @container">
+        <motion.div
+          initial={{ x: "-120%" }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+          className="w-11/12 md:w-1/2 mx-auto md:mx-0 mt-12 md:mt-0 @container"
+        >
           <div className="flex flex-col items-center md:items-start gap-4">
             <Label text="Live Demo" />
             <h1 className="font-nunito font-bold text-3xl md:text-4xl lg:text-5xl text-center md:text-start leading-12 md:leading-14 lg:leading-16">
@@ -73,7 +84,7 @@ const Hero = () => {
               <Button text="Analisa" color="primary" onClick={handleAnalyze} />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
