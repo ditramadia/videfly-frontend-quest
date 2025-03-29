@@ -25,8 +25,9 @@ const Hero = () => {
           <Image
             src="/icons/hero-vignette.svg"
             alt="Purple ellipse vignette"
+            className="object-contain" 
             fill
-            className="object-contain"
+            sizes="(max-width: 768px) 0vw, 50vw"
             priority
           />
         </div>
@@ -36,8 +37,9 @@ const Hero = () => {
           <Image
             src="/images/hero-mockup.png"
             alt="Mockup marketing produk Limerush Sparkling Energy Drink"
-            fill
             className="object-contain"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
         </div>

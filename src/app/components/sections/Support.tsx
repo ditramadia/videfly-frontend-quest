@@ -22,7 +22,7 @@ const Support = () => {
                 src={item.imageUrl}
                 alt={item.label}
                 fill
-                objectFit="container"
+                className='object-contain'
               />
             </div>
           ))}

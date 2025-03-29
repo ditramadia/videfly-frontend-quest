@@ -34,11 +34,12 @@ const Tutorial = () => {
             <div className="relative w-full h-full">
               {tutorialSteps.map((step, i) => (
                 <Image
-                  className={`${i === activeStep ? '' : 'hidden'} object-contain`}
                   key={i}
                   src={step.imageUrl}
                   alt={step.imageAlt}
+                  className={`${i === activeStep ? '' : 'hidden'} object-contain`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               ))}
             </div>
