@@ -7,8 +7,8 @@ interface LabelProps {
 
 const Label = ({ text }: LabelProps) => {
   return (
-    <div className="w-fit p-[1px] bg-gradient-to-r from-[#4C3199] to-[#7F52FF] rounded-full">
-      <div className="flex items-center gap-2 py-1 px-2 bg-white rounded-full">
+    <div className="w-fit p-[1px] bg-gradient-to-r from-[#4C3199] to-text-grad-start rounded-full">
+      <div className="flex items-center gap-2 py-1 px-3 bg-white rounded-full">
         <Image
           src="/icons/diamond-filled.svg"
           alt="Diamond icon"

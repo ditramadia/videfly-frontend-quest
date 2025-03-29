@@ -38,7 +38,7 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <ul className="hidden md:flex justify-around flex-1 max-w-[642px]">
         {navigationMenu.map((navItem, i) => (
-          <li key={i} className="text-paragraph transition-150 hover:scale-105">
+          <li key={i} className="text-sm lg:text-base text-paragraph transition-150 hover:scale-105">
             <Link href={navItem.url}>{navItem.label}</Link>
           </li>
         ))}
