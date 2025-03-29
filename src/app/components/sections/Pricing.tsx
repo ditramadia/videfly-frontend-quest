@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import ArrowRightFilledIcon from '@public/icons/arrow-right-filled.svg'
+import ArrowRightFilledIcon from '@public/icons/arrow-right-filled.svg';
 
 import Button from '@/app/components/Button';
 
@@ -19,7 +19,12 @@ const Pricing = () => {
           </p>
           <div className="w-44 mt-3 transition-150 hover:scale-105">
             <Link href="/auth/login">
-              <Button text="Buat Video" icon={ArrowRightFilledIcon} color="gradient" bold />
+              <Button
+                text="Buat Video"
+                icon={ArrowRightFilledIcon}
+                color="gradient"
+                bold
+              />
             </Link>
           </div>
         </div>
@@ -30,9 +35,7 @@ const Pricing = () => {
               <span className="bg-gradient-to-br text-primary-gradient">
                 70
               </span>
-              <span className="bg-gradient-to-br text-primary-gradient">
-                %
-              </span>
+              <span className="bg-gradient-to-br text-primary-gradient">%</span>
             </h3>
             <p className="text-paragraph font-medium">
               Produktivitas Meningkat
@@ -44,9 +47,7 @@ const Pricing = () => {
               <span className="bg-gradient-to-br text-primary-gradient">
                 50
               </span>
-              <span className="bg-gradient-to-br text-primary-gradient">
-                %
-              </span>
+              <span className="bg-gradient-to-br text-primary-gradient">%</span>
             </h3>
             <p className="text-paragraph font-medium">Kenaikan ROI</p>
           </div>
@@ -56,9 +57,7 @@ const Pricing = () => {
               <span className="bg-gradient-to-br text-primary-gradient">
                 20
               </span>
-              <span className="bg-gradient-to-br text-primary-gradient">
-                x
-              </span>
+              <span className="bg-gradient-to-br text-primary-gradient">x</span>
             </h3>
             <p className="text-paragraph font-medium">Lebih Hemat</p>
           </div>

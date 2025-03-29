@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DiamondIcon from '@public/icons/diamond-filled.svg'
+import DiamondIcon from '@public/icons/diamond-filled.svg';
 
 interface LabelProps {
   text: string;

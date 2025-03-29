@@ -4,8 +4,8 @@ import Image from 'next/image';
 import FeatureType from '@/app/types/feature-type';
 
 interface FeatureCardProps {
-  feature: FeatureType
-  icon: FC<SVGProps<SVGSVGElement>>
+  feature: FeatureType;
+  icon: FC<SVGProps<SVGSVGElement>>;
 }
 
 const FeatureCard = ({ feature, icon: Icon }: FeatureCardProps) => {
@@ -13,7 +13,12 @@ const FeatureCard = ({ feature, icon: Icon }: FeatureCardProps) => {
     <div className="w-full h-full bg-card rounded-xl">
       <div className="relative w-full h-64">
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent from-75% to-card to-95%"></div>
-        <Image src={feature.image} alt={feature.imageAlt} fill className='object-contain' />
+        <Image
+          src={feature.image}
+          alt={feature.imageAlt}
+          fill
+          className="object-contain"
+        />
       </div>
 
       <div className="p-6">

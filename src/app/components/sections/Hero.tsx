@@ -26,7 +26,7 @@ const Hero = () => {
             src="/icons/hero-vignette.svg"
             alt="Purple ellipse vignette"
             fill
-            className='object-contain'
+            className="object-contain"
             priority
           />
         </div>
@@ -37,7 +37,7 @@ const Hero = () => {
             src="/images/hero-mockup.png"
             alt="Mockup marketing produk Limerush Sparkling Energy Drink"
             fill
-            className='object-contain'
+            className="object-contain"
             priority
           />
         </div>

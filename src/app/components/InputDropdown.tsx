@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-import LinkIcon from '@public/icons/link.svg'
-import CaretDownIcon from '@public/icons/caret-down.svg'
+import LinkIcon from '@public/icons/link.svg';
+import CaretDownIcon from '@public/icons/caret-down.svg';
 
 interface InputDropdownProps {
   options: string[];
@@ -69,7 +69,9 @@ const InputDropdown = ({
           />
         </div>
         <div>
-          <CaretDownIcon className={`text-black w-6 transition-150 ${isOptionsOpen ? 'rotate-180' : ''}`} />
+          <CaretDownIcon
+            className={`text-black w-6 transition-150 ${isOptionsOpen ? 'rotate-180' : ''}`}
+          />
         </div>
       </button>
 
