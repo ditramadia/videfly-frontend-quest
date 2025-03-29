@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { FC, SVGProps } from 'react';
 
 interface ButtonProps {
   text: string;
+  icon?: FC<SVGProps<SVGSVGElement>>
   color: 'primary' | 'gray' | 'gradient';
   border?: boolean;
   bold?: boolean;
   onClick?: () => void;
 }
 
-const Button = ({ text, color, border, bold, onClick }: ButtonProps) => {
+const Button = ({ text, icon: Icon, color, border, bold, onClick }: ButtonProps) => {
   const wrapperBaseStyle =
     'overflow-hidden w-full h-full rounded-xl cursor-pointer';
-  const baseStyle = `flex justify-center items-center w-full h-full px-4 py-2 ${bold ? 'font-semibold' : ''}`;
+  const baseStyle = `flex justify-center items-center gap-2 w-full h-full px-4 py-2 ${bold ? 'font-semibold' : ''}`;
 
   const colorStyles = {
     primary: 'bg-primary-500 text-white',
@@ -40,6 +41,7 @@ const Button = ({ text, color, border, bold, onClick }: ButtonProps) => {
         className={`${baseStyle} ${colorStyles[color]} ${border ? borderStyles[color] : ''}`}
       >
         {text}
+        {Icon && <Icon />}
       </div>
     </button>
   );
