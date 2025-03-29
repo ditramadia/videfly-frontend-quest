@@ -1,4 +1,4 @@
-const tutorialSteps = [
+const tutorial = [
   {
     title: 'Masukkan URL',
     body: 'Cukup tempelkan tautan produk atau bisnis Anda, dan sistem kami akan secara otomatis mengambil informasi penting untuk memulai.',
@@ -19,4 +19,4 @@ const tutorialSteps = [
   },
 ];
 
-export default tutorialSteps;
+export default tutorial;

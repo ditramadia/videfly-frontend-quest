@@ -3,11 +3,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import tutorialSteps from '@/app/data/tutorial-steps';
+import tutorialSteps from '@/app/data/tutorial';
 
 import Label from '@/app/components/Label';
 import TutorialStep from '@/app/components/TutorialStep';
-
 
 const Tutorial = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -29,6 +28,7 @@ const Tutorial = () => {
       </div>
 
       <div className="mt-16 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+        {/* Tutorial Images */}
         <div className="lg:basis-1/2 flex items-center justify-center w-full h-64 md:h-[420px] p-2 md:p-12 bg-surface-500 border-1 border-border rounded-3xl">
           <div className="w-full h-full p-1 md:p-8 bg-white border-1 border-border rounded-2xl md:rounded-lg">
             <div className="relative w-full h-full">
@@ -46,6 +46,7 @@ const Tutorial = () => {
           </div>
         </div>
 
+        {/* Tutorial Steps */}
         <div className="md:basis-1/2 flex flex-col gap-4 lg:gap-6">
           {tutorialSteps.map((step, i) => (
             <TutorialStep

@@ -51,6 +51,7 @@ const InputDropdown = ({
 
   return (
     <div ref={dropdownRef} className="relative w-full h-full">
+      {/* Input */}
       <button
         className="flex items-center gap-2 w-full h-full pr-2 pl-3 border-2 border-primary-500 rounded-xl cursor-pointer"
         onClick={handleToggleOptions}
@@ -72,6 +73,7 @@ const InputDropdown = ({
         </div>
       </button>
 
+      {/* Dropdown Selection */}
       {isOptionsOpen && (
         <ul className="absolute overflow-y-auto w-full max-h-32 xl:max-h-52 mt-2 bg-white border-1 border-border rounded-xl">
           {options.map((option, i) => (
