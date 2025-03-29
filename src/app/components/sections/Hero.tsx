@@ -35,7 +35,7 @@ const Hero = () => {
         {/* Hero Image */}
         <div className="relative md:absolute md:inset-y-0 md:-right-12 w-full md:w-1/2 h-72 md:h-full">
           <Image
-            src="/images/hero-mockup.png"
+            src="/images/hero-mockup.webp"
             alt="Mockup marketing produk Limerush Sparkling Energy Drink"
             className="object-contain"
             fill
