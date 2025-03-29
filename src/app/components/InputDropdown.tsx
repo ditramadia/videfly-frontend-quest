@@ -3,6 +3,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
+import LinkIcon from '@public/icons/link.svg'
+import CaretDownIcon from '@public/icons/caret-down.svg'
+
 interface InputDropdownProps {
   options: string[];
   placeholder?: string;
@@ -54,24 +57,19 @@ const InputDropdown = ({
         onClick={handleToggleOptions}
       >
         <div className="hidden lg:block">
-          <Image src="/icons/link.svg" alt="Link" width={24} height={24} />
+          <LinkIcon className="w-[25px] h-[25px] text-[#8A8A8A]" />
         </div>
         <div className="flex-1">
           <input
             type="text"
-            className="w-full outline-0 cursor-pointer"
+            className="w-full outline-0 text-sm cursor-pointer"
             value={value}
             placeholder={placeholder}
             readOnly
           />
         </div>
         <div>
-          <Image
-            src="/icons/caret-down.svg"
-            alt="Caret down"
-            width={24}
-            height={24}
-          />
+          <CaretDownIcon className={`text-black w-6 transition-150 ${isOptionsOpen ? 'rotate-180' : ''}`} />
         </div>
       </button>
 
@@ -80,7 +78,7 @@ const InputDropdown = ({
           {options.map((option, i) => (
             <li
               key={i}
-              className="py-2 px-3 truncate cursor-pointer transition-150 hover:bg-surface-500"
+              className="py-2 px-3 text-sm truncate cursor-pointer transition-150 hover:bg-surface-500"
               onClick={() => handleSelectOption(option)}
             >
               {option}
