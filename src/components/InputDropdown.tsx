@@ -87,11 +87,11 @@ const InputDropdown = ({
               className="p-3 flex gap-3 text-sm cursor-pointer transition-150 hover:bg-surface-500"
               onClick={() => handleSelectOption(option.url)}
             >
-              <div className='min-w-10 h-10 bg-slate-200 rounded-lg'></div>
+              <div className="min-w-10 h-10 bg-slate-200 rounded-lg"></div>
 
-              <div className='truncate'>
-                <p className='font-semibold'>{option.name}</p>
-                <p className='text-sm text-paragraph'>{option.url}</p>
+              <div className="truncate">
+                <p className="font-semibold">{option.name}</p>
+                <p className="text-sm text-paragraph">{option.url}</p>
               </div>
             </li>
           ))}

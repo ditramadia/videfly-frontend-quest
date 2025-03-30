@@ -1,14 +1,14 @@
 'use client';
 
-import React from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-import Label from '@/components/Label'
+import Label from '@/components/Label';
 import DemoForm from './DemoForm';
 
 interface DemoProps {
-  setProcessId: (value: string) => void
+  setProcessId: (value: string) => void;
 }
 
 const Demo = ({ setProcessId }: DemoProps) => {
@@ -59,17 +59,17 @@ const Demo = ({ setProcessId }: DemoProps) => {
             </span>
           </h1>
           <p className="text-balance text-center md:text-left text-paragraph">
-            Masukkan URL, ubah jadi video dalam hitungan detik. <br /> Mudah
-            dan gratis!
+            Masukkan URL, ubah jadi video dalam hitungan detik. <br /> Mudah dan
+            gratis!
           </p>
         </div>
 
-        <div className='max-w-[500px] md:max-w-[800px] mx-auto md:mx-0 mt-8 @sm:mt-12 @md:mt-16 @lg:mt-24'>
+        <div className="max-w-[500px] md:max-w-[800px] mx-auto md:mx-0 mt-8 @sm:mt-12 @md:mt-16 @lg:mt-24">
           <DemoForm setProcessId={setProcessId} />
         </div>
       </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default Demo
+export default Demo;

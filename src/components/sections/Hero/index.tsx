@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 
@@ -6,16 +6,12 @@ import Demo from './Demo';
 import Result from './Result';
 
 const Hero = () => {
-  const [processId, setProcessId] = useState<string>('')
+  const [processId, setProcessId] = useState<string>('');
 
   return (
     <div className="flex justify-center items-center md:py-16 lg:py-28 bg-white md:bg-gradient-to-br md:from-[#7261EF] md:via-[#B9AFF7] md:to-[#F1EDFD]">
       <div className="overflow-hidden md:relative flex flex-col md:max-w-[1200px] w-full md:w-11/12 min-h-[680px] md:min-h-[680px] lg:min-h-[720px] py-10 md:px-10 bg-white md:rounded-3xl">
-        {
-          processId ?
-          <Result /> :
-          <Demo setProcessId={setProcessId}/>
-        }
+        {processId ? <Result /> : <Demo setProcessId={setProcessId} />}
       </div>
     </div>
   );

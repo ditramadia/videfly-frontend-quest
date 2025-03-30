@@ -18,11 +18,10 @@ const Button = ({
   border,
   bold,
   disabled,
-  type = "button",
+  type = 'button',
   onClick,
 }: ButtonProps) => {
-  const wrapperBaseStyle =
-    'overflow-hidden w-full h-full rounded-xl';
+  const wrapperBaseStyle = 'overflow-hidden w-full h-full rounded-xl';
   const baseStyle = `flex justify-center items-center gap-2 w-full h-full px-4 py-2 ${bold ? 'font-semibold' : ''}`;
 
   const colorStyles = {
