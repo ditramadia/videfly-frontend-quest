@@ -13,6 +13,7 @@ import Button from '@/components/Button';
 const Result = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  // Fetch dummy result
   useEffect(() => {
     const fetchDummy = async () => {
       try {
@@ -33,6 +34,7 @@ const Result = () => {
   }, []);
 
   return isLoading ? (
+    // Spinner
     <div className="flex items-center justify-center flex-1  w-full h-full">
       <Lottie
         animationData={spinnerAnimation}
@@ -51,7 +53,7 @@ const Result = () => {
           className="flex flex-col items-center gap-8"
         >
           <div className="flex flex-col items-center gap-4">
-            <h2 className="font-nunito text-center font-bold text-3xl md:text-4xl lg:text-5xl text-center md:text-start leading-12 md:leading-14 lg:leading-16">
+            <h2 className="font-nunito font-bold text-3xl md:text-4xl lg:text-5xl text-center md:text-start leading-12 md:leading-14 lg:leading-16">
               Videomu Sudah Siap!
             </h2>
             <p className="text-balance text-center text-paragraph">

@@ -32,6 +32,7 @@ const InputDropdown = ({
     setIsOptionsOpen(false);
   };
 
+  // Handle Click Outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (

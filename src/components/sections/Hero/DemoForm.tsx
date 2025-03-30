@@ -14,6 +14,7 @@ interface DemoFormProps {
   setProcessId: (value: string) => void;
 }
 
+// Form Schema
 const demoFormSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().min(1, 'Email is required').email('Invalid email address'),
@@ -54,6 +55,7 @@ const DemoForm = ({ setProcessId }: DemoFormProps) => {
 
   return (
     <>
+      {/* Step 1 */}
       {step === 1 && (
         <div className="flex flex-col @sm:flex-row gap-2 mb-12 @sm:mb-32 @lg:mb-56">
           <div className="@sm:flex-1 h-11">
@@ -76,6 +78,8 @@ const DemoForm = ({ setProcessId }: DemoFormProps) => {
           </div>
         </div>
       )}
+
+      {/* Step 2 */}
       {step === 2 && (
         <form
           onSubmit={handleSubmit(onSubmit)}

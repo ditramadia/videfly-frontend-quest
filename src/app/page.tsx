@@ -6,13 +6,12 @@ import Support from '@/components/sections/Support';
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-24 md:gap-20 lg:gap-32">
+    <main className="flex flex-col gap-24 md:gap-20 lg:gap-32 mb-24 md:mb-20 lg:mb-32">
       <Hero />
       <Features />
       <Tutorial />
       <Pricing />
       <Support />
-      <div></div>
     </main>
   );
 }

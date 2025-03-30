@@ -12,11 +12,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     <div className="flex flex-col gap-2">
       <label className="text-sm">{label}</label>
       <div className="flex gap-3">
+        {/* Prefix */}
         {prefix && (
           <span className="pr-1 border-b-2 border-border placeholder:text-label-disable">
             {prefix}
           </span>
         )}
+
+        {/* Main Field */}
         <input
           ref={ref}
           value={value}
