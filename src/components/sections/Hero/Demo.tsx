@@ -9,6 +9,7 @@ import urlSelection from '@/data/url-selection';
 import Label from '@/components/Label'
 import InputDropdown from '@/components/InputDropdown'
 import Button from '@/components/Button'
+import Input from '@/components/Input';
 
 const Demo = () => {
   const [isFormOpen, setIsFormOpen] = useState<boolean>(false)
@@ -74,8 +75,26 @@ const Demo = () => {
 
           <div className='max-w-[500px] md:max-w-[800px] mx-auto md:mx-0 mt-8 @sm:mt-12 @md:mt-16 @lg:mt-24'>
             {
-              isFormOpen ?
-              <div>Form</div> :
+              isFormOpen 
+              ?
+              <form className='flex flex-col items-center gap-6'>
+                <div className='w-full flex flex-col gap-4'>
+                  <div>
+                    <Input label='Nama' placeholder='Contoh: John Doe' />
+                  </div>
+                  <div>
+                    <Input label='Email' placeholder='nama@email.com' />
+                  </div>
+                  <div>
+                    <Input label='Nomor Telepon' prefix='+62' />
+                  </div>
+                </div> 
+
+                <div className={`w-44 h-11 transition-150 ${selectedValue ? 'hover:scale-105' : ''} `}>
+                  <Button text="Kirim" color="primary" />
+                </div>
+              </form> 
+              :
               <div className='flex flex-col @sm:flex-row gap-2 mb-12 @sm:mb-32 @lg:mb-56'>
                 <div className="@sm:flex-1 h-11">
                   <InputDropdown
