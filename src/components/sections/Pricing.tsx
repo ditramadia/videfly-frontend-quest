@@ -37,7 +37,7 @@ const Pricing = () => {
             Jangan tunggu lagi! Buat video pakai Videfly sekarang, biar cepat,
             untung besar, dan hemat!
           </p>
-          <div className="w-44 mt-3 transition-150 hover:scale-105">
+          <div className="w-44 mt-3 transition-150 hover:scale-105 active:scale-95">
             <Link href="/auth/login">
               <Button
                 text="Buat Video"

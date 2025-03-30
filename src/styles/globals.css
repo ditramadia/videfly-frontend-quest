@@ -30,6 +30,20 @@
     @apply max-w-[1200px] w-11/12 mx-auto;
   }
 
+  input[type='checkbox'] {
+    @apply appearance-none w-5 h-5 border-1 border-paragraph rounded-md outline-none p-2 cursor-pointer;
+  }
+
+  input[type='checkbox']:checked {
+    @apply bg-[url('/icons/check.svg')] bg-cover p-2 bg-primary-500 border-primary-500;
+  }
+
+  @media (hover: hover) {
+    input[type='checkbox']:not(:checked):hover {
+      @apply bg-text-grad-start/20 outline-4 outline-text-grad-start/20;
+    }
+  }
+
   .text-primary-gradient {
     @apply from-text-grad-start to-text-grad-end text-transparent bg-clip-text;
   }
