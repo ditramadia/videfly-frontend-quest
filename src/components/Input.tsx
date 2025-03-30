@@ -2,11 +2,13 @@ import React from 'react'
 
 interface InputProps {
   label: string;
+  type?: string;
+  name: string;
   placeholder?: string;
   prefix?: string;
 }
 
-const Input = ({ label, placeholder, prefix }: InputProps) => {
+const Input = ({ label, type, name, placeholder, prefix }: InputProps) => {
   return (
     <div className='flex flex-col gap-2'>
       <label className='text-sm'>{label}</label>
@@ -14,7 +16,8 @@ const Input = ({ label, placeholder, prefix }: InputProps) => {
         {
           prefix && 
           <input 
-            type="text" 
+            type={type ? type : 'text'}
+            name={name}
             value={prefix}
             className='w-10 border-b-2 border-border placeholder:text-label-disable'
             readOnly
@@ -23,7 +26,7 @@ const Input = ({ label, placeholder, prefix }: InputProps) => {
         <input 
           type="text" 
           placeholder={placeholder}
-          className='flex-1 border-b-2 border-border outline-0 placeholder:text-label-disable'
+          className='w-full border-b-2 border-border outline-0 placeholder:text-label-disable'
         />
       </div>
     </div>
