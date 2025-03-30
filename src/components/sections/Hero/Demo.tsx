@@ -1,27 +1,13 @@
 'use client';
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-import urlSelection from '@/data/url-selection';
-
 import Label from '@/components/Label'
-import InputDropdown from '@/components/InputDropdown'
-import Button from '@/components/Button'
-import Input from '@/components/Input';
-import Link from 'next/link';
+import DemoForm from './DemoForm';
 
 const Demo = () => {
-  const [isFormOpen, setIsFormOpen] = useState<boolean>(false)
-  const [selectedValue, setSelectedValue] = useState<string>('');
-
-  const handleAnalyze = () => {
-    if (!selectedValue) return
-
-    setIsFormOpen(true)
-  };
-  
   return (
     <>
       {/* Vignette */}
@@ -75,50 +61,7 @@ const Demo = () => {
           </div>
 
           <div className='max-w-[500px] md:max-w-[800px] mx-auto md:mx-0 mt-8 @sm:mt-12 @md:mt-16 @lg:mt-24'>
-            {
-              isFormOpen 
-              ?
-              <form className='flex flex-col items-center md:items-start gap-6 lg:gap-8'>
-                <div className='w-full flex flex-col gap-4 lg:gap-6'>
-                  <div className='basis-1'>
-                    <Input label='Nama' name='name' placeholder='Contoh: John Doe' />
-                  </div>
-                  <div className='w-full flex flex-col lg:flex-row gap-4 lg:gap-6'>
-                    <div className='basis-1 lg:basis-1/2'>
-                      <Input label='Email' type='email' name='email' placeholder='nama@email.com' />
-                    </div>
-                    <div className='basis-1 lg:basis-1/2'>
-                      <Input label='Nomor Telepon' name='phone-number' prefix='+62' />
-                    </div>
-                  </div>
-                </div> 
-
-                <div className='flex gap-3 items-start'>
-                  <input type="checkbox" name='tnc' className='mt-1' />
-                  <p>Dengan mendaftar, saya menyatakan telah membaca dan menyetujui 
-                    <Link href='/terms-and-conditions' className='text-primary-500'> Syarat dan Ketentuan</Link> dan 
-                    <Link href='/privacy-policy' className='text-primary-500'> Kebijakan Privasi</Link> Videfly</p>
-                </div>
-
-                <div className={`w-44 h-11 mt-4 transition-150 ${selectedValue ? 'hover:scale-105' : ''} `}>
-                  <Button text="Kirim" color="primary" />
-                </div>
-              </form> 
-              :
-              <div className='flex flex-col @sm:flex-row gap-2 mb-12 @sm:mb-32 @lg:mb-56'>
-                <div className="@sm:flex-1 h-11">
-                  <InputDropdown
-                    options={urlSelection}
-                    placeholder="Pilih Link URL Product"
-                    value={selectedValue}
-                    onChange={setSelectedValue}
-                  />
-                </div>
-                <div className={`h-11 transition-150 ${selectedValue ? 'hover:scale-105' : ''} `}>
-                  <Button text="Analisa" color="primary" disabled={!selectedValue} onClick={handleAnalyze} />
-                </div>
-              </div>
-            }
+            <DemoForm />
           </div>
         </motion.div>
     </>

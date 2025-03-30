@@ -6,6 +6,7 @@ interface ButtonProps {
   color: 'primary' | 'gray' | 'gradient';
   border?: boolean;
   bold?: boolean;
+  type?: 'button' | 'submit' | 'reset' | undefined;
   disabled?: boolean;
   onClick?: () => void;
 }
@@ -17,6 +18,7 @@ const Button = ({
   border,
   bold,
   disabled,
+  type,
   onClick,
 }: ButtonProps) => {
   const wrapperBaseStyle =
@@ -46,6 +48,8 @@ const Button = ({
     <button
       className={`${wrapperBaseStyle} ${border ? wrapperBorderStyles[color] : ''} ${disabled ? 'opacity-50 cursor-default' : ' cursor-pointer'}`}
       onClick={onClick}
+      type={type ? type : 'button'}
+      disabled={disabled}
     >
       <div
         className={`${baseStyle} ${colorStyles[color]} ${border ? borderStyles[color] : ''}`}
