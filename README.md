@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Overview
 
-## Getting Started
+**Project Name:** Videfly Frontend Quest <br/>
+**Description:** Videfly responsive landing page <br/>
+**Deployment Platform:** Vercel <br/>
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Environment:** Node.js v22
+- **Framework:** Next.js v15 (App Router)
+- **Styling:** Tailwind CSS v4
+- **Bundler:** Turbopack (custom configuration with SVGR)
+
+## Project Structure
+
+```
+/src
+  /app          # Next.js app directory
+  /components   # Reusable UI components
+  /data         # Static data
+  /styles       # Tailwind CSS styles
+  /types        # TypeScript types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation and Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```
+   git clone https://github.com/ditramadia/videfly-frontend-quest.git
+   cd videfly-frontend-quest
+   ```
 
-## Learn More
+2. Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+   ```
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Start developement server
+   ```
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development Approaches
 
-## Deploy on Vercel
+### 1. Framework
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js was chosen for this project due to its powerful features, including:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Server-Side Rendering (SSR) & Static Site Generation (SSG): Improve performance and SEO
+- Built-in Routing: Simplifies navigation without additional libraries
+- Optimized Performance: Uses image optimization
+
+### 2. Theme Styling
+
+- Tailwind CSS v4 was used for styling, allowing for a utility-first approach that enhances maintainability
+- Custom Tailwind configuration was set up for project-specific styles and consistent theming
+
+### 3. Responsiveness
+
+- Mobile-first design approach ensures a seamless user experience on all devices
+- Flexbox & Grid Layouts: Used to create adaptive and efficient layouts
+- Media Queries: Utilized Tailwind's responsive utilities to handle various screen sizes
+
+### 4. Animation
+
+- Framer Motion provides smooth and declarative animations with easy-to-use motion components
+- Lottie enables lightweight vector animations using JSON files, reducing dependency on complex JavaScript animation
+- Drawback of Animations:
+
+  - Increased Load Time due to additional client processes
+  - Search engine may not fully process JavaScript-based animations, potentially impacting SEO rankings
+
+### 5. Form Validation Using Zod
+
+- Zod provides a simple, declarative schema validation for TypeScript
+- Forms in the application are validated using Zod to ensure data integrity and improve user experience
+
+### 6. Optimized Images
+
+- Next Image provides automatic optimization, lazy loading, and responsive image support
+- WebP is used as the primary image format for better compression and faster load times
+
+### 7. Code Quality with Prettier and ESLint
+
+- Prettier is used for code formatting, ensuring consistent style across the project
+- ESLint enforces coding standards, detects errors, and maintains best practices
+
+## Future Enhancements
+
+- Implement state management using Redux
+- Optimize Turbopack bundling for performance improvements
+- Add unit and end-to-end testing using Jest or Cypress
+- Integrate with API for dynamic data
+- Lazy loading animations, reducing animation complexity, and optimizing JSON files
