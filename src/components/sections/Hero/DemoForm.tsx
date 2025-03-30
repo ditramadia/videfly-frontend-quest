@@ -15,10 +15,10 @@ interface DemoFormProps {
 }
 
 const demoFormSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().min(1, "Email is required").email("Invalid email address"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits").regex(/^\d+$/, "Phone number must contain only digits"),
-  terms: z.boolean().refine((val) => val === true, "You must accept the terms and conditions"),
+  name: z.string().min(1, "Name is required").default("John Doe"),
+  email: z.string().min(1, "Email is required").email("Invalid email address").default("test@example.com"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits").regex(/^\d+$/, "Phone number must contain only digits").default("8123456789"),
+  terms: z.boolean().refine((val) => val === true, "You must accept the terms and conditions").default(true),
 })
 
 type DemoFormSchema = z.infer<typeof demoFormSchema>

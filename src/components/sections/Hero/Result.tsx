@@ -72,7 +72,7 @@ const Result = () => {
               initial={{ y: '100%' }} 
               animate={{ y: '0%' }} 
               transition={{ duration: 0.7, ease: 'easeInOut' }}
-              className='relative max-w-[800px] w-full mx-auto top-12 aspect-video'
+              className='relative max-w-[700px] w-full mx-auto top-12 aspect-video'
             >
               <Image 
                 src="/images/hero-result.webp"
