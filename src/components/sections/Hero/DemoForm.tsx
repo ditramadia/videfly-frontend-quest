@@ -10,6 +10,10 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import InputDropdown from '@/components/InputDropdown';
 
+interface DemoFormProps {
+  setProcessId: (value: string) => void
+}
+
 const demoFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().min(1, "Email is required").email("Invalid email address"),
@@ -19,7 +23,7 @@ const demoFormSchema = z.object({
 
 type DemoFormSchema = z.infer<typeof demoFormSchema>
 
-const DemoForm = () => {
+const DemoForm = ({ setProcessId }: DemoFormProps) => {
   const {
     control,
     register,
@@ -39,7 +43,8 @@ const DemoForm = () => {
   };
 
   const onSubmit = (data: DemoFormSchema) => {
-    console.log('submitted', data)
+    console.log('Data', data)
+    setProcessId('6ff5c435-168c-4d9a-82c9-315f56545d25')
   }
 
   return (
