@@ -58,7 +58,11 @@ const Result = () => {
             </motion.div>
 
             {/* Vignette */}
-            <div className='hidden lg:block lg:absolute lg:inset-x-0 lg:top-[50%] lg:bottom-[-100%]'>
+            <motion.div 
+              initial={{ y: '70%' }} 
+              animate={{ y: '0%' }} 
+              transition={{ duration: 0.7, ease: 'easeInOut' }}
+              className='hidden lg:block lg:absolute lg:inset-x-0 lg:top-[50%] lg:bottom-[-100%]'>
               <Image
                 src="/icons/hero-result-vignette.svg"
                 alt="Purple ellipse vignette"
@@ -66,7 +70,7 @@ const Result = () => {
                 fill
                 sizes="(max-width: 1024px) 0, 50vw"
               />
-            </div>
+            </motion.div>
 
             <motion.div 
               initial={{ y: '100%' }} 
