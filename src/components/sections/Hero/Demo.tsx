@@ -15,7 +15,7 @@ const Demo = ({ setProcessId }: DemoProps) => {
   return (
     <>
       {/* Vignette */}
-      <div className="hidden md:block md:absolute md:top-[-324px] xl:top-[-484px] md:right-[-444px] xl:right-[-600px] md:w-[768px] xl:w-[1120px] md:h-[768px] xl:h-[1120px]">
+      <div className="hidden absolute md:block md:top-[-324px] xl:top-[-484px] md:right-[-444px] xl:right-[-600px] md:w-[768px] xl:w-[1120px] md:h-[768px] xl:h-[1120px]">
         <Image
           src="/icons/hero-vignette.svg"
           alt="Purple ellipse vignette"

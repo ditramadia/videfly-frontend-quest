@@ -15,10 +15,10 @@ interface DemoFormProps {
 }
 
 const demoFormSchema = z.object({
-  name: z.string().min(1, "Name is required").default("John Doe"),
-  email: z.string().min(1, "Email is required").email("Invalid email address").default("test@example.com"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits").regex(/^\d+$/, "Phone number must contain only digits").default("8123456789"),
-  terms: z.boolean().refine((val) => val === true, "You must accept the terms and conditions").default(true),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().min(1, "Email is required").email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits").regex(/^\d+$/, "Phone number must contain only digits"),
+  terms: z.boolean().refine((val) => val === true, "You must accept the terms and conditions"),
 })
 
 type DemoFormSchema = z.infer<typeof demoFormSchema>
@@ -28,7 +28,7 @@ const DemoForm = ({ setProcessId }: DemoFormProps) => {
     control,
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<DemoFormSchema>({
     resolver: zodResolver(demoFormSchema)
   })
@@ -117,8 +117,8 @@ const DemoForm = ({ setProcessId }: DemoFormProps) => {
           {errors.terms && <p className="mt-1 text-red-500 text-sm">{errors.terms.message}</p>}
         </div>
 
-        <div className={`w-44 h-11 mt-4 transition-150 ${isValid ? 'hover:scale-105 active:scale-95' : ''}`}>
-          <Button type="submit" text="Kirim" color="primary" disabled={!isValid} />
+        <div className='w-44 h-11 mt-4 transition-150 hover:scale-105 active:scale-95'>
+          <Button type="submit" text="Kirim" color="primary" />
         </div>
       </form>
     }
