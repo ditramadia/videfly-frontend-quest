@@ -6,6 +6,7 @@ interface ButtonProps {
   color: 'primary' | 'gray' | 'gradient';
   border?: boolean;
   bold?: boolean;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -15,10 +16,11 @@ const Button = ({
   color,
   border,
   bold,
+  disabled,
   onClick,
 }: ButtonProps) => {
   const wrapperBaseStyle =
-    'overflow-hidden w-full h-full rounded-xl cursor-pointer';
+    'overflow-hidden w-full h-full rounded-xl';
   const baseStyle = `flex justify-center items-center gap-2 w-full h-full px-4 py-2 ${bold ? 'font-semibold' : ''}`;
 
   const colorStyles = {
@@ -42,7 +44,7 @@ const Button = ({
 
   return (
     <button
-      className={`${wrapperBaseStyle} ${border ? wrapperBorderStyles[color] : ''}`}
+      className={`${wrapperBaseStyle} ${border ? wrapperBorderStyles[color] : ''} ${disabled ? 'opacity-50 cursor-default' : ' cursor-pointer'}`}
       onClick={onClick}
     >
       <div
