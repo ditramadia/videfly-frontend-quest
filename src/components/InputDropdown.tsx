@@ -2,11 +2,13 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
+import ProductType from '@/types/product-type';
+
 import LinkIcon from '@public/icons/link.svg';
 import CaretDownIcon from '@public/icons/caret-down.svg';
 
 interface InputDropdownProps {
-  options: string[];
+  options: ProductType[];
   placeholder?: string;
   value: string;
   onChange: (value: string) => void;
@@ -63,7 +65,7 @@ const InputDropdown = ({
           <input
             type="text"
             name="url-demo"
-            className="w-full outline-0 text-sm cursor-pointer"
+            className="w-full outline-0 text-paragraph text-sm cursor-pointer"
             value={value}
             placeholder={placeholder}
             readOnly
@@ -78,14 +80,19 @@ const InputDropdown = ({
 
       {/* Dropdown Selection */}
       {isOptionsOpen && (
-        <ul className="absolute overflow-y-auto w-full max-h-28 xl:max-h-44 mt-2 bg-white border-1 border-border rounded-xl">
+        <ul className="absolute z-10 overflow-y-auto w-full max-h-28 md:max-h-56 mt-2 bg-white border-1 border-border rounded-xl">
           {options.map((option, i) => (
             <li
               key={i}
-              className="py-2 px-3 text-sm truncate cursor-pointer transition-150 hover:bg-surface-500"
-              onClick={() => handleSelectOption(option)}
+              className="p-3 flex gap-3 text-sm cursor-pointer transition-150 hover:bg-surface-500"
+              onClick={() => handleSelectOption(option.url)}
             >
-              {option}
+              <div className="min-w-10 h-10 bg-slate-200 rounded-lg"></div>
+
+              <div className="truncate">
+                <p className="font-semibold">{option.name}</p>
+                <p className="text-sm text-paragraph">{option.url}</p>
+              </div>
             </li>
           ))}
         </ul>

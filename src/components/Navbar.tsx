@@ -50,13 +50,13 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-4">
-        <div className="h-[42px] transition-150 hover:scale-105">
+        <div className="h-[42px] transition-150 hover:scale-105 active:scale-95">
           <Link href="/auth/login">
             <Button text="Masuk" color="gray" border bold />
           </Link>
         </div>
 
-        <div className="hidden md:block h-[42px] transition-150 hover:scale-105">
+        <div className="hidden md:block h-[42px] transition-150 hover:scale-105 active:scale-95">
           <Link href="/auth/register">
             <Button text="Buat Video" color="gradient" border bold />
           </Link>
